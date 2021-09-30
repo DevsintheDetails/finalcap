@@ -10,10 +10,14 @@ export default function NewReservation() {
     reservation_date: "",
     reservation_time: "",
     people: 0,
-  })
+  });
 
   function handleChange({ target }) {
-    setFormData({ ...formData, [target.name]: target.name === "people" ? Number(target.value) : target.value });
+    setFormData({
+      ...formData,
+      [target.name]:
+        target.name === "people" ? Number(target.value) : target.value,
+    });
   }
 
   function handleSubmit(event) {
@@ -102,17 +106,29 @@ export default function NewReservation() {
           <div className="form-group">
             <label htmlFor="people">People</label>
             <input
-            className="form-control"
-            name="people"
-            id="people"
-            type="number"
-            onChange={handleChange}
-            value={formData.people}
-            min="1"
+              className="form-control"
+              name="people"
+              id="people"
+              type="number"
+              onChange={handleChange}
+              value={formData.people}
+              min="1"
             />
 
-<button className="btn btn-danger m-1" type="button" onClick={history.goBack}>Cancel</button>
-<button className="btn btn-primary m-1" type="submit" onClick={handleSubmit}>Submit</button>
+            <button
+              className="btn btn-danger m-1"
+              type="button"
+              onClick={history.goBack}
+            >
+              Cancel
+            </button>
+            <button
+              className="btn btn-primary m-1"
+              type="submit"
+              onClick={handleSubmit}
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>
