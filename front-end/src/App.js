@@ -7,7 +7,6 @@ import Layout from "./layout/Layout";
  * @returns {JSX.Element}
  */
 function App() {
-  <h1>Hello Deployment</h1>;
   return (
     <Switch>
       <Route path="/">
